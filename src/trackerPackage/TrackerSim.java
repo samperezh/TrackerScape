@@ -3,9 +3,8 @@ package trackerPackage;
 import acm.program.GraphicsProgram;
 import static trackerPackage.TrackerParams.*;
 import java.awt.Component;
-// Hello
-//hello hello
-//hiiiii
+
+
 public class TrackerSim extends GraphicsProgram {
 	
 	public static void main(String[] args) {
@@ -14,7 +13,7 @@ public class TrackerSim extends GraphicsProgram {
 	
 	public void run() {
 		
-		this.resize(TrackerParams.WIDTH+OFFSET, TrackerParams.HEIGHT+OFFSET);
+		this.resize(TrackerParams.WIDTH, TrackerParams.HEIGHT);
 		TrackerCalendar Calendar = new TrackerCalendar(this);
 		TrackerButtons Buttons = new TrackerButtons(this);
 		
