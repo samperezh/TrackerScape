@@ -18,6 +18,5 @@ public class TrackerSim extends GraphicsProgram {
 		TrackerButtons Buttons = new TrackerButtons(this);
 		
 		
-		
 	}
 }
