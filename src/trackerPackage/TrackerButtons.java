@@ -48,10 +48,6 @@ public class TrackerButtons {
 		
 		GProgram.add(DayChooser, BorderLayout.SOUTH);
 		
-		//ModeChooser = new JCheckBox("Collage Mode");
-		//ModeChooser.setSelected(false);
-		//GProgram.add(ModeChooser, BorderLayout.NORTH);
-		
 		
 	//	for (int i = 0; i < emotions.length; i++) {} SIMPLIFY
 		
@@ -101,43 +97,4 @@ public class TrackerButtons {
 		return day = (String)DayChooser.getSelectedItem();
 	}
 	
-/*	public void actionPerformed (ActionEvent e, GraphicsProgram GProgram) {
-		
-		JComboBox combo = (JComboBox)e.getSource();
-        String currentQuantity = (String)combo.getSelectedItem();
-		if (e.getSource() == MonthChooser) {
-			 month = (String)MonthChooser.getSelectedItem();	
-		}
-		
-		if (e.getSource() == DayChooser) {
-			 day = (String)DayChooser.getSelectedItem();	
-		}
-		//JComboBox<String> combo = (JComboBox<String>) e.getSource();
-		//String selectedMonth = (String) combo.getSelectedItem();
-		//x = Integer.parseInt(selectedMonth);
-		
-		if (e.getActionCommand().equals("Enter")) {
-			// location of square
-			GRect square = createShape(getCurrentEmotion());
-			GProgram.add(square); //.getX .getY of rect
-		}
-		
-	}	
-*/
-/*	public GRect getBox() {
-		GRect[][] array = Calendar.getCalendar();
-		
-		if (day == "1") return array[0][0];
-		
-		return array[0][1];
-	}
-*/
-/*	public GRect createShape(Color color) {
-		GRect location = getBox();
-		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
-		coloredSquare.setColor(color);
-		coloredSquare.setFilled(true);
-		return coloredSquare;
-	}
-*/	
 }

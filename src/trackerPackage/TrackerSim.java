@@ -29,7 +29,7 @@ public class TrackerSim extends GraphicsProgram {
 		addActionListeners(this);
 	}
 	
-public void actionPerformed (ActionEvent e) {
+	public void actionPerformed (ActionEvent e) {
 		
 		if (e.getActionCommand().equals("Enter")) {
 			GRect square = createShape(Buttons.getCurrentEmotion());

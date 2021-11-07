@@ -28,6 +28,11 @@ public class TrackerCalendar {
 			for (int j = 0; j <  calendarCases[i].length; j++) {
 				calendarCases[i][j] = new GRect(sqX, sqY, sqSize, sqSize);
 				GProgram.add(calendarCases[i][j]);
+				
+				if (i == 4 && j > 2) {
+				GProgram.remove(calendarCases[i][j]);	
+				}
+				
 				sqX += sqSize;
 			}
 			sqY += sqSize;
