@@ -38,11 +38,19 @@ public void actionPerformed (ActionEvent e) {
 	}
 
 	public GRect createShape(Color color) {
-		GRect location = Buttons.getBox();
+		GRect location = getBox();
 		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
 		coloredSquare.setColor(color);
 		coloredSquare.setFilled(true);
 		return coloredSquare;
+	}
+	
+	public GRect getBox() {
+		GRect[][] array = Calendar.getCalendar();
+		
+		if (Buttons.getDayChooser() == "1") return array[0][0];
+		
+		return array[0][1];
 	}
 	
 }

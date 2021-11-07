@@ -124,14 +124,14 @@ public class TrackerButtons {
 		
 	}	
 */
-	public GRect getBox() {
+/*	public GRect getBox() {
 		GRect[][] array = Calendar.getCalendar();
 		
 		if (day == "1") return array[0][0];
 		
 		return array[0][1];
 	}
-
+*/
 /*	public GRect createShape(Color color) {
 		GRect location = getBox();
 		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
