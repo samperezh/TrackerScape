@@ -8,7 +8,7 @@ import static trackerPackage.TrackerParams.*;
 public class TrackerCalendar {
 
 	GraphicsProgram GProgram;
-	
+	TrackerButtons trackerbuttons;
 	
 	public TrackerCalendar (GraphicsProgram GProgram) {
 		this.GProgram = GProgram;
