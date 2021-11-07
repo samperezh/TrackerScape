@@ -21,7 +21,8 @@ public class TrackerCalendar {
 		int sqX  = 50;
 		int sqY = 50;
 		
-		
+		// calendarCases.length = height = 5
+		// calendarCases[i].length = width = 7
 		for (int i = 0; i < calendarCases.length; i++) {
 			for (int j = 0; j <  calendarCases[i].length; j++) {
 				calendarCases[i][j] = new GRect(sqSize, sqSize);

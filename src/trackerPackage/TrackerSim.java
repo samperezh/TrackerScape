@@ -3,6 +3,8 @@ package trackerPackage;
 import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 import static trackerPackage.TrackerParams.*;
+
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 
@@ -28,11 +30,29 @@ public class TrackerSim extends GraphicsProgram {
 		addActionListeners();
 	}
 	
-	public void actionPerformed (ActionEvent e) {
-		JComboBox<String> combo = (JComboBox<String>) e.getSource();
-		String selectedMonth = (String) combo.getSelectedItem();
-		x = Integer.parseInt(selectedMonth);
+	/*public void actionPerformed (ActionEvent e) {
+		
+//		JComboBox combo = (JComboBox)e.getSource();
+//        String currentQuantity = (String)combo.getSelectedItem();
+		if (e.getSource() == Buttons.MonthChooser);
+		//JComboBox<String> combo = (JComboBox<String>) e.getSource();
+		//String selectedMonth = (String) combo.getSelectedItem();
+		//x = Integer.parseInt(selectedMonth);
+		
+		if (e.getActionCommand().equals("Enter")) {
+			//int ;
+			GRect square = createShape(Buttons.getCurrentEmotion());
+			add(square);
+		}
+		
 	}
+	
+	public GRect createShape(Color color) {
+		GRect coloredSquare = new GRect(10,10, sqSize, sqSize);
+		coloredSquare.setColor(color);
+		coloredSquare.setFilled(true);
+		return coloredSquare;
+	}*/
 	
 	public GRect[][] getBox() {
 				

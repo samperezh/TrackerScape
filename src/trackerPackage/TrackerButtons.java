@@ -1,9 +1,11 @@
 package trackerPackage;
 
+import acm.graphics.GRect;
 import acm.program.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 import static trackerPackage.TrackerParams.*;
@@ -18,6 +20,12 @@ public class TrackerButtons {
 	public JRadioButton productiveButton;
 	
 	//public JCheckBox ModeChooser;
+	
+	public JComboBox MonthChooser;
+	public JComboBox DayChooser;
+	
+	public String month;
+	public String day;
 
 	
 
@@ -26,12 +34,12 @@ public class TrackerButtons {
 	
 		GProgram.add(new JLabel("TrackerScape"), BorderLayout.NORTH);
 		
-		JComboBox MonthChooser = new JComboBox(months);
+		MonthChooser = new JComboBox(months);
 		MonthChooser.setEditable(false);
 		
 		GProgram.add(MonthChooser, BorderLayout.SOUTH);
 		
-		JComboBox DayChooser = new JComboBox(days);
+		DayChooser = new JComboBox(days);
 		DayChooser.setEditable(false);
 		
 		GProgram.add(DayChooser, BorderLayout.SOUTH);
@@ -79,6 +87,36 @@ public class TrackerButtons {
 		if (productiveButton.isSelected()) return Color.GREEN;
 		return Color.WHITE;
 		
+	}
+	
+	public void actionPerformed (ActionEvent e, GraphicsProgram GProgram) {
+		
+//		JComboBox combo = (JComboBox)e.getSource();
+//        String currentQuantity = (String)combo.getSelectedItem();
+		if (e.getSource() == MonthChooser) {
+			 month = (String)MonthChooser.getSelectedItem();	
+		}
+		
+		if (e.getSource() == DayChooser) {
+			 day = (String)DayChooser.getSelectedItem();	
+		}
+		//JComboBox<String> combo = (JComboBox<String>) e.getSource();
+		//String selectedMonth = (String) combo.getSelectedItem();
+		//x = Integer.parseInt(selectedMonth);
+		
+		if (e.getActionCommand().equals("Enter")) {
+			// location of square
+			GRect square = createShape(getCurrentEmotion());
+			GProgram.add(square);
+		}
+		
+	}
+	
+	public GRect createShape(Color color) {
+		GRect coloredSquare = new GRect(10,10, sqSize, sqSize);
+		coloredSquare.setColor(color);
+		coloredSquare.setFilled(true);
+		return coloredSquare;
 	}
 	
 }
