@@ -8,7 +8,7 @@ import static trackerPackage.TrackerParams.*;
 public class TrackerCalendar {
 
 	GraphicsProgram GProgram;
-	TrackerButtons trackerbuttons;
+//	TrackerButtons Buttons;
 	GRect[][] calendarCases;
 	
 	public TrackerCalendar (GraphicsProgram GProgram) {
@@ -26,8 +26,8 @@ public class TrackerCalendar {
 		// calendarCases[i].length = width = 7
 		for (int i = 0; i < calendarCases.length; i++) {
 			for (int j = 0; j <  calendarCases[i].length; j++) {
-				calendarCases[i][j] = new GRect(sqSize, sqSize);
-				GProgram.add(calendarCases[i][j],sqX,sqY);
+				calendarCases[i][j] = new GRect(sqX, sqY, sqSize, sqSize);
+				GProgram.add(calendarCases[i][j]);
 				sqX += sqSize;
 			}
 			sqY += sqSize;

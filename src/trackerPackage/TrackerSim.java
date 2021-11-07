@@ -14,7 +14,6 @@ import javax.swing.JComboBox;
 public class TrackerSim extends GraphicsProgram {
 	TrackerCalendar Calendar;
 	TrackerButtons Buttons;
-	public int x;
 	
 	public static void main(String[] args) {
 		new TrackerSim().start(args);
@@ -27,41 +26,23 @@ public class TrackerSim extends GraphicsProgram {
 
 		Buttons = new TrackerButtons(this);
 		
-//		Buttons.start();
-		
-		addActionListeners();
+		addActionListeners(this);
 	}
 	
-	/*public void actionPerformed (ActionEvent e) {
-		
-//		JComboBox combo = (JComboBox)e.getSource();
-//        String currentQuantity = (String)combo.getSelectedItem();
-		if (e.getSource() == Buttons.MonthChooser);
-		//JComboBox<String> combo = (JComboBox<String>) e.getSource();
-		//String selectedMonth = (String) combo.getSelectedItem();
-		//x = Integer.parseInt(selectedMonth);
+public void actionPerformed (ActionEvent e) {
 		
 		if (e.getActionCommand().equals("Enter")) {
-			//int ;
 			GRect square = createShape(Buttons.getCurrentEmotion());
 			add(square);
 		}
-		
 	}
-	
+
 	public GRect createShape(Color color) {
-		GRect coloredSquare = new GRect(10,10, sqSize, sqSize);
+		GRect location = Buttons.getBox();
+		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
 		coloredSquare.setColor(color);
 		coloredSquare.setFilled(true);
 		return coloredSquare;
-	}*/
+	}
+	
 }
-
-
-/* when the month is changed, number of boxes are changed for amount of days
- * assign emotions to boxes depending on the day + month selected 
- * 
- * 
- * 
- */
-

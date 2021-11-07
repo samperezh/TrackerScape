@@ -28,7 +28,7 @@ public class TrackerButtons {
 	
 	public String month;
 	public String day;
-	public TrackerCalendar calendar;
+	public TrackerCalendar Calendar;
 	public GraphicsProgram GProgram;
 
 
@@ -81,12 +81,7 @@ public class TrackerButtons {
 		GProgram.add(new JButton("Enter"), BorderLayout.EAST);
 
 	}
-	
-/*	public void run() {
 		
-		GProgram.addActionListeners();
-	}
-*/	
 	public Color getCurrentEmotion() {
 		if (happyButton.isSelected()) return Color.YELLOW;
 		if (angryButton.isSelected()) return Color.RED;
@@ -98,10 +93,18 @@ public class TrackerButtons {
 		
 	}
 	
-	public void actionPerformed (ActionEvent e, GraphicsProgram GProgram) {
+/*	public String getMonthChooser() {
+		return month = (String)MonthChooser.getSelectedItem();
+	}
+*/	
+	public String getDayChooser() {
+		return day = (String)DayChooser.getSelectedItem();
+	}
+	
+/*	public void actionPerformed (ActionEvent e, GraphicsProgram GProgram) {
 		
-//		JComboBox combo = (JComboBox)e.getSource();
-//        String currentQuantity = (String)combo.getSelectedItem();
+		JComboBox combo = (JComboBox)e.getSource();
+        String currentQuantity = (String)combo.getSelectedItem();
 		if (e.getSource() == MonthChooser) {
 			 month = (String)MonthChooser.getSelectedItem();	
 		}
@@ -119,22 +122,22 @@ public class TrackerButtons {
 			GProgram.add(square); //.getX .getY of rect
 		}
 		
-	}
-	
+	}	
+*/
 	public GRect getBox() {
-		GRect[][] array = calendar.getCalendar();
+		GRect[][] array = Calendar.getCalendar();
 		
-		if (day == "3") return array[1][1];
+		if (day == "1") return array[0][0];
 		
-		return array[1][2];
+		return array[0][1];
 	}
 
-	public GRect createShape(Color color) {
+/*	public GRect createShape(Color color) {
 		GRect location = getBox();
 		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
 		coloredSquare.setColor(color);
 		coloredSquare.setFilled(true);
 		return coloredSquare;
 	}
-	
+*/	
 }
