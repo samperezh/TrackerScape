@@ -27,6 +27,8 @@ public class TrackerSim extends GraphicsProgram {
 
 		Buttons = new TrackerButtons(this);
 		
+//		Buttons.start();
+		
 		addActionListeners();
 	}
 	
@@ -53,44 +55,6 @@ public class TrackerSim extends GraphicsProgram {
 		coloredSquare.setFilled(true);
 		return coloredSquare;
 	}*/
-	
-	public GRect[][] getBox() {
-				
-//		String a = e.getSelectedItem();
-
-		if (x <=7) {
-			for (int i = 0; i < 7; i++) {
-				return new GRect [1][i];
-			}
-		} else if (x > 7 && x <= 14) {
-				for (int i = 0; i < 7; i++) {
-					return new GRect [2][i];
-					}
-		} else if (x > 14 && x<= 21) {
-				for (int i = 0; i < 7; i++) {
-					return new GRect [3][i];
-					}
-		} else if (x > 21 && x<= 28) {
-				for (int i = 0; i < 7; i++) {
-					return new GRect [4][i];
-					}
-		} else if (x > 28 && x<= 31) {
-				for (int i = 0; i < 7; i++) {
-					return new GRect [5][i];
-					}
-		}
-		return null;
-	}
-//		if (e.getSource() == "1")return new GRect[1][1];
-//		if (e.getSource() == "2")return new GRect[1][2];
-//		if (e.getSource() == "3")return new GRect[1][3];
-//		if (e.getSource() == "4")return new GRect[1][4];
-//		if (e.getSource() == "5")return new GRect[1][5];
-//		if (e.getSource() == "6")return new GRect[1][6];
-//		if (e.getSource() == "7")return new GRect[1][7];
-		
-//		if (e.getSource() == "8")return new GRect[2][1];
-//		return null;
 }
 
 

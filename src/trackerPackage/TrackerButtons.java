@@ -1,11 +1,13 @@
 package trackerPackage;
 
+import acm.graphics.GPoint;
 import acm.graphics.GRect;
 import acm.program.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.lang.reflect.Array;
 
 import javax.swing.*;
 import static trackerPackage.TrackerParams.*;
@@ -26,11 +28,13 @@ public class TrackerButtons {
 	
 	public String month;
 	public String day;
+	public TrackerCalendar calendar;
+	public GraphicsProgram GProgram;
 
-	
 
 	public TrackerButtons(GraphicsProgram GProgram) {
 		
+		this.GProgram = GProgram;
 	
 		GProgram.add(new JLabel("TrackerScape"), BorderLayout.NORTH);
 		
@@ -78,6 +82,11 @@ public class TrackerButtons {
 
 	}
 	
+/*	public void run() {
+		
+		GProgram.addActionListeners();
+	}
+*/	
 	public Color getCurrentEmotion() {
 		if (happyButton.isSelected()) return Color.YELLOW;
 		if (angryButton.isSelected()) return Color.RED;
@@ -107,13 +116,22 @@ public class TrackerButtons {
 		if (e.getActionCommand().equals("Enter")) {
 			// location of square
 			GRect square = createShape(getCurrentEmotion());
-			GProgram.add(square);
+			GProgram.add(square); //.getX .getY of rect
 		}
 		
 	}
 	
+	public GRect getBox() {
+		GRect[][] array = calendar.getCalendar();
+		
+		if (day == "3") return array[1][1];
+		
+		return array[1][2];
+	}
+
 	public GRect createShape(Color color) {
-		GRect coloredSquare = new GRect(10,10, sqSize, sqSize);
+		GRect location = getBox();
+		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
 		coloredSquare.setColor(color);
 		coloredSquare.setFilled(true);
 		return coloredSquare;

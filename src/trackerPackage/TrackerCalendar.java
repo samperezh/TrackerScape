@@ -9,11 +9,12 @@ public class TrackerCalendar {
 
 	GraphicsProgram GProgram;
 	TrackerButtons trackerbuttons;
+	GRect[][] calendarCases;
 	
 	public TrackerCalendar (GraphicsProgram GProgram) {
 		this.GProgram = GProgram;
 		
-		GRect[][] calendarCases = new GRect[5][7];
+		calendarCases = new GRect[5][7];
 		
 		//Setting up Calendar boxes 
 		
@@ -33,7 +34,9 @@ public class TrackerCalendar {
 			sqX = 50;
 		}
 	}
-
-
+	
+	public GRect[][] getCalendar() {
+		return calendarCases;
+	}
 
 }
