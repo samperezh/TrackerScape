@@ -5,7 +5,7 @@ import java.awt.Color; // import more colors?
 public class TrackerParams {
 
 	// Screen coordinates dimensions
-	public static final int WIDTH = 585;
+	public static final int WIDTH = 700;
 	public static final int HEIGHT = 525;
 	public static final int OFFSET = 300;
 	

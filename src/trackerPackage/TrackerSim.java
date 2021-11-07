@@ -20,3 +20,11 @@ public class TrackerSim extends GraphicsProgram {
 		
 	}
 }
+
+/* when the month is changed, number of boxes are changed for amount of days
+ * assign emotions to boxes depending on the day + month selected 
+ * 
+ * 
+ * 
+ */
+
