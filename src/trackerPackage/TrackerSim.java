@@ -26,6 +26,9 @@ public class TrackerSim extends GraphicsProgram {
 
 		Buttons = new TrackerButtons(this);
 		
+		setBackground(new Color(247,228,170));			
+		
+		
 		addActionListeners(this);
 	}
 	
@@ -33,17 +36,31 @@ public class TrackerSim extends GraphicsProgram {
 		
 		if (e.getActionCommand().equals("Enter")) {
 			GRect square = createShape(Buttons.getCurrentEmotion());
+			GRect nsq = removeShape();
 			add(square);
+			add(nsq);
 		}
 	}
+	
+	
 
 	public GRect createShape(Color color) {
 		GRect location = getBox();
 		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
-		coloredSquare.setColor(color);
+		coloredSquare.setFillColor(color);
+		coloredSquare.setColor(Color.WHITE);
 		coloredSquare.setFilled(true);
+		
 		return coloredSquare;
 	}
+	
+	public GRect removeShape() {
+		GRect location = removeBox();
+		GRect coloredSquare = new GRect(location.getX(),location.getY(), sqSize, sqSize);
+		coloredSquare.setColor(Color.WHITE);
+		return coloredSquare;
+	}
+	
 	
 	public GRect getBox() {
 		GRect[][] array = Calendar.getCalendar();
@@ -83,6 +100,57 @@ public class TrackerSim extends GraphicsProgram {
 		if (Buttons.getDayChooser() == "29") return array[4][0];
 		if (Buttons.getDayChooser() == "30") return array[4][1];
 		return array[4][2];
+	}
+	
+	public GRect removeBox() {
+		GRect[][] array = Calendar.getCalendar();
+		
+		if (Buttons.getMonthChooser() == "February") {
+			remove(array[4][0]);
+			remove(array[4][1]);
+			remove(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "April") {
+			add(array[4][0]);
+			add(array[4][1]);
+			remove(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "June") {
+			add(array[4][0]);
+			add(array[4][1]);
+			remove(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "September") {
+			add(array[4][0]);
+			add(array[4][1]);
+			remove(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "November") {
+			add(array[4][0]);
+			add(array[4][1]);
+			remove(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "January") {
+			add(array[4][0]);
+			add(array[4][1]);
+			add(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "March") {
+			add(array[4][0]);
+			add(array[4][1]);
+			add(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "May") {
+			add(array[4][0]);
+			add(array[4][1]);
+			add(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "July") {
+			add(array[4][0]);
+			add(array[4][1]);
+			add(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "October") {
+			add(array[4][0]);
+			add(array[4][1]);
+			add(array[4][2]);
+		} else if (Buttons.getMonthChooser() == "December") {
+			add(array[4][0]);
+			add(array[4][1]);
+			add(array[4][2]);
+		}
+		return array[0][0];
 	}
 	
 }

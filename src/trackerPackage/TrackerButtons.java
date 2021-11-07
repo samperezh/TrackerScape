@@ -79,20 +79,20 @@ public class TrackerButtons {
 	}
 	
 	public Color getCurrentEmotion() {
-		if (happyButton.isSelected()) return new Color(255,255,204);
-		if (angryButton.isSelected()) return new Color(255,102,102);
-		if (sadButton.isSelected()) return new Color(153,204,255);
-		if (tiredButton.isSelected()) return new Color(153,153,255);
-		if (anxiousButton.isSelected()) return new Color(255,204,153);
-		if (productiveButton.isSelected()) return new Color(102,204,0);
+		if (happyButton.isSelected()) return new Color(248,199,67);
+		if (angryButton.isSelected()) return new Color(219,107,92);
+		if (sadButton.isSelected()) return new Color(104,129,149);
+		if (tiredButton.isSelected()) return new Color(133,104,149);
+		if (anxiousButton.isSelected()) return new Color(140,70,70);
+		if (productiveButton.isSelected()) return new Color(88,140,126);
 		return Color.WHITE;
 		
 	}
 	
-/*	public String getMonthChooser() {
+	public String getMonthChooser() {
 		return month = (String)MonthChooser.getSelectedItem();
 	}
-*/	
+	
 	public String getDayChooser() {
 		return day = (String)DayChooser.getSelectedItem();
 	}
