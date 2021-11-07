@@ -16,6 +16,8 @@ public class TrackerButtons {
 	public JRadioButton tiredButton;
 	public JRadioButton anxiousButton;
 	public JRadioButton productiveButton;
+	
+	//public JCheckBox ModeChooser;
 
 	
 
@@ -33,6 +35,11 @@ public class TrackerButtons {
 		DayChooser.setEditable(false);
 		
 		GProgram.add(DayChooser, BorderLayout.SOUTH);
+		
+		//ModeChooser = new JCheckBox("Collage Mode");
+		//ModeChooser.setSelected(false);
+		//GProgram.add(ModeChooser, BorderLayout.NORTH);
+		
 		
 	//	for (int i = 0; i < emotions.length; i++) {} SIMPLIFY
 		
@@ -58,6 +65,8 @@ public class TrackerButtons {
 		GProgram.add(tiredButton, BorderLayout.EAST);
 		GProgram.add(anxiousButton, BorderLayout.EAST);
 		GProgram.add(productiveButton, BorderLayout.EAST);
+		
+		GProgram.add(new JButton("Enter"), BorderLayout.EAST);
 
 	}
 	
@@ -67,7 +76,8 @@ public class TrackerButtons {
 		if (sadButton.isSelected()) return Color.BLUE;
 		if (tiredButton.isSelected()) return Color.LIGHT_GRAY;
 		if (anxiousButton.isSelected()) return Color.ORANGE;
-		return Color.GREEN;
+		if (productiveButton.isSelected()) return Color.GREEN;
+		return Color.WHITE;
 		
 	}
 	
