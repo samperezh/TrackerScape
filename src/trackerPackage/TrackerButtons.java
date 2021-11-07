@@ -77,14 +77,14 @@ public class TrackerButtons {
 		GProgram.add(new JButton("Enter"), BorderLayout.EAST);
 
 	}
-		
+	
 	public Color getCurrentEmotion() {
-		if (happyButton.isSelected()) return Color.YELLOW;
-		if (angryButton.isSelected()) return Color.RED;
-		if (sadButton.isSelected()) return Color.BLUE;
-		if (tiredButton.isSelected()) return Color.LIGHT_GRAY;
-		if (anxiousButton.isSelected()) return Color.ORANGE;
-		if (productiveButton.isSelected()) return Color.GREEN;
+		if (happyButton.isSelected()) return new Color(255,255,204);
+		if (angryButton.isSelected()) return new Color(255,102,102);
+		if (sadButton.isSelected()) return new Color(153,204,255);
+		if (tiredButton.isSelected()) return new Color(153,153,255);
+		if (anxiousButton.isSelected()) return new Color(255,204,153);
+		if (productiveButton.isSelected()) return new Color(102,204,0);
 		return Color.WHITE;
 		
 	}
